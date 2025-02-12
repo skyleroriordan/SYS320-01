@@ -1,4 +1,4 @@
-﻿. (Join-Path $PSScriprt Apache-Logs.ps1)
+﻿. (Join-Path $PSScriprtRoot Apache-Logs.ps1)
 
 clear
 
