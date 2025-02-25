@@ -166,7 +166,7 @@ while($operation){
         }
 
         $daysBack = Read-Host -Prompt "How many days back do you want logs for?"
-        $userLogins = getLogInAndOffs $daysBack
+        $userLogins = getFailedLogins $daysBack
         # TODO: Change the above line in a way that, the days 90 should be taken from the user
 
         Write-Host ($userLogins | Where-Object { $_.User -ilike "*$name"} | Format-Table | Out-String)
