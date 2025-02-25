@@ -64,3 +64,18 @@ function getFailedLogins($timeBack){
 
     return $failedloginsTable
 } # End of function getFailedLogi
+
+function getAtRiskUsers(){
+    $failedlogins = getFailedLogins $daysBack
+    $atriskusers =  $failedlogins | Group-Object -Property User -NoElement | Where-Object { $_.Count -gt 10 } 
+
+    if($atriskusers){
+    Write-Host "These users had more than 10 failed logins:"
+    foreach($entry in $atriskusers){
+    Write-Host ("{0} => {1} failed logins" -f $entry.Name, $entry.Count)
+    }
+    }
+    else {
+    Write-Host "No users had more than 10 failed logins"
+    }
+    }
