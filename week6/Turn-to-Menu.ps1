@@ -8,9 +8,10 @@ $Prompt = "`n"
 $Prompt += "Please choose your operation:`n"
 $Prompt += "1 - Display last 10 Apache logs`n"
 $Prompt += "2 - Display last 10 failed logins for all users`n"
-$Prompt += "3 - Display at risk user`n"
+$Prompt += "3 - Display at risk users`n"
 $Prompt += "4 - Start Chrome and go to champlain.edu`n"
 $Prompt += "5 - Exit`n"
+
 
 $operartion = $true
 
@@ -28,7 +29,7 @@ while($operation){
     }
 
     elseif($choice -eq 3){
-    getAtRiskUsers
+    getAtRiskUsers 90
     }
 
     elseif($choice -eq 4){
