@@ -1,6 +1,7 @@
 #! /bin/bash
 
 logFile="/var/log/apache2/access.log"
+echo "/bin/bash" >> ioc.txt
 
 function displayAllLogs(){
 	cat "$logFile"
